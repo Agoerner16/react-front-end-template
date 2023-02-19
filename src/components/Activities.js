@@ -20,8 +20,7 @@ const Activities = (props) => {
                 );
             })}
             </ul>
-          
-      </div>
+          </div>
     )
 }
 

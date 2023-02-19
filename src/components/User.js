@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 const User = (props) => {
     const user = props.user
-
     return(
         <div>
         <h1>
@@ -12,8 +11,6 @@ const User = (props) => {
         </h1>
         <Link to='/myroutines'>My Routines</Link>
         </div>
-
-        
     )
 }
 

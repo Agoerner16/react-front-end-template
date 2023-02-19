@@ -46,7 +46,6 @@ export const fetchUserRoutines = async (username) => {
     }
 }
 
-
 export const exchangeTokenForUser = async () => {
     const token = window.localStorage.getItem('token');
     
@@ -87,7 +86,6 @@ export const createActivity = async (ev, name, description) => {
     }
 }
 
-
 export const register = async (ev, username, password) => {
     try {
         ev.preventDefault()
@@ -108,7 +106,6 @@ export const register = async (ev, username, password) => {
         throw error
     }
 }
-
 
 export const login = async (ev, username, password) => {
     try {
@@ -133,12 +130,10 @@ export const login = async (ev, username, password) => {
     }
 }
 
-
 export const createRoutine = async (ev, name, goal, isPublic) => {
     try {
         ev.preventDefault()
         const token = window.localStorage.getItem('token')
-        
         const response = await fetch('http://fitnesstrac-kr.herokuapp.com/api/routines', {
             method: "POST",
             headers: {
@@ -159,7 +154,6 @@ export const createRoutine = async (ev, name, goal, isPublic) => {
     };
 };
 
-
 export const deleteRoutine = async (routineId, getMyRoutines, myRoutines, setMyRoutines) => {
     try {
         const token = window.localStorage.getItem('token');
@@ -179,6 +173,3 @@ export const deleteRoutine = async (routineId, getMyRoutines, myRoutines, setMyR
         console.error(error);
     }
 };
-
-
-

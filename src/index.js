@@ -15,18 +15,16 @@ import {
   CreateRoutine
 } from "./components/index";
 
-
-const App = () => {
-  const [user, setUser] = useState({})
-  const [routines, setRoutines] = useState([])
-  const [activities, setActivities] = useState([])
-  const [myRoutines, setMyRoutines] = useState([])
+  const App = () => {
+    const [user, setUser] = useState({})
+    const [routines, setRoutines] = useState([])
+    const [activities, setActivities] = useState([])
+    const [myRoutines, setMyRoutines] = useState([])
    
   const getRoutines = async ()=>{
     const newRoutines = await fetchRoutines()
     setRoutines(newRoutines)
   }
-
   const getActivities = async ()=>{
     const newActivities = await fetchActivities()
     setActivities(newActivities)
@@ -45,18 +43,14 @@ const App = () => {
     window.localStorage.removeItem('token');
     setUser({});
   }
-
   useEffect(()=> {
     getRoutines()
     getActivities()
     getUser()
   },[])
 
-
-
   return (
     <div>
-
       <div className='content'>
         <div className='left'>
           { user.id ? <div> <User user={user}/> <button onClick={ () => {logout()} }>Logout</button></div> : <div> <Register /> <Login setUser={setUser}/> </div>}
@@ -74,7 +68,7 @@ const App = () => {
         </Routes>
         </div>
         <div className='right'> 
-          { user.id ? <div><CreateActivity CreateActivity={CreateActivity}/></div> : <h3>Must log in to create activities and routines!</h3> }
+          { user.id ? <div><CreateActivity CreateActivity={CreateActivity}/></div> : <h3>Login required to create Routines and Activities</h3> }
           { user.id ? <div><CreateRoutine CreateRoutine={CreateRoutine} myRoutines={myRoutines} setMyRoutines={setMyRoutines}/></div> : null }
         </div>
       </div>

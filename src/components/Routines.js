@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 
 const Routines = (props) => {
     const routines = props.routines
-    //console.log(routines)
 
     return(
       <div>
@@ -18,9 +17,7 @@ const Routines = (props) => {
                         <h3>{routine.name}</h3>
                         <p className="indent">{routine.goal}</p>
                         <p className="indent"> By: {routine.creatorName}</p>
-                       
-                       
-                        {routine.activities.map( (activity) => {
+                            {routine.activities.map( (activity) => {
                             return(<div className="actDiv" key={activity.id}>
                                 <h4 className="indent">{activity.name}</h4>
                                 <p className="doubleInd">{activity.description}</p>
@@ -29,15 +26,12 @@ const Routines = (props) => {
                                 </div>
                             )
                         } 
-                      
-
-                        )}
+                       )}
                     </div>
                 );
             })}
             </ul>  
-          
-      </div>
+          </div>
     )
 }
 
